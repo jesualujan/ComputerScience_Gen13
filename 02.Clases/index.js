@@ -27,9 +27,14 @@ class Persona {
   Hablar() {
       return "bla bla bla estoy hablando"
   }
+  
+  Accion() {
+      return "hola soy" + " " + this.nombre + " " + this.Hablar()
+  }
 
 }
 
+//HARDCODE O HARCODEANDO 
 // INSTACIAR NUESTROS OBJETOS DE LA CLASE
 const personaUno = new Persona ('CESAR','GARCIA',27,'COLOMBIA','PROFESOR')
 const personaDos = new Persona ('JESUA','LUJAN',28,'MEXICANO','GAMER PROFESIONAL')
@@ -39,3 +44,4 @@ const personaCuatro = new Persona ('JUAN','PEREZ',28,'MEXICANO','GAMER PROFESION
 console.log(personaUno , personaDos, personaTres, personaCuatro);
 console.log(personaUno.Saludar());
 console.log(personaDos.Saludar());
+console.log(personaTres.Accion());

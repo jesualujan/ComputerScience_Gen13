@@ -1,3 +1,4 @@
+import {Largometraje} from './Largometraje.js'
 
 
 class Pelicula extends Largometraje {

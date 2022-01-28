@@ -1,3 +1,5 @@
+import {Largometraje} from './Largometraje.js'
+
 class Documental extends Largometraje {
     constructor(titulo,duracion,autor){
         //Aquí indicamos que atributos de mi clase padre va a heredar

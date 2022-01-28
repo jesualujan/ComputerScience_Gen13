@@ -1,3 +1,5 @@
+import {Largometraje} from './Largometraje.js'
+
 class Partido extends Largometraje {
     constructor(titulo,duracion,equipo){
         //Aquí indicamos que atributos de mi clase padre va a heredar

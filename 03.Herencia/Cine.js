@@ -17,23 +17,23 @@ class Cine {
 
 // INSTACIAR OBJETO PELICULA
 const titanic = new Pelicula ('TITANIC', '220MIN', 'B')
-const Sala1 = new Sala ('1', '250personas', titanic)
-const cinepolisGalerias = new Cine (Sala1)
+const SalaUno = new Sala ('1', '250personas', titanic)
+const cinepolisGalerias = new Cine (SalaUno)
 
 
 //INSTANCIAR OBJETO DOCUMENTAL
-const docum = new Documental ('Catfish', '130MIN', 'A')
-const Sala2 = new Sala ('2', '230personas', docum)
-const cinepolisPabellon = new Cine (Sala2)
+const documental = new Documental ('Catfish', '130MIN', 'A')
+const SalaDos = new Sala ('2', '230personas', documental)
+const cinepolisPabellon = new Cine (SalaDos)
 
 
 //INSTANCIAR OBJETO PARTIDO
 const partidoFut = new Partido  ('Champions', '125MIN', 'A')
-const Sala3 = new Sala ('3', '270personas', partidoFut)
-const cinemex = new Cine (Sala3)
+const SalaTres = new Sala ('3', '270personas', partidoFut)
+const cinemex = new Cine (SalaTres)
 
 
 //IMPRIMIR NUESTROS OBJETOS DE CLASE 
-console.log(cinepolisGalerias.reproducir())
-console.log(cinepolisPabellon.reproducir())
-console.log(cinemex.reproducir())
+console.log(cinepolisGalerias.Reproducir())
+console.log(cinepolisPabellon.Reproducir())
+console.log(cinemex.Reproducir())

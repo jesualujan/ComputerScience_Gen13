@@ -1,7 +1,7 @@
 class Largometraje {
     constructor(titulo,duracion){
-        this.titulo=titulo
-        this.duracion=duracion
+        this.titulo = titulo
+        this.duracion = duracion
     }
 
     //Metodos (get)
@@ -15,4 +15,6 @@ class Largometraje {
     }
 }
 
+//EXPORTAMOS NUESTRA PLANTILLA (CÓDIGO)
+//Usando la forma definida por ES6
 export {Largometraje}

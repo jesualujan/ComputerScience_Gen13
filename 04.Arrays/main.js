@@ -165,5 +165,15 @@ var directivos = empleados.filter(empleado =>{
 })
 console.log(directivos)
 
+//Sort y reverse
+
+var numeros = [5,12,3,409,43,3,7,8]
+
+numeros.sort((a,b)=>b-a)
+console.log(numeros)
+var nombres = ["Rene","Jesua","Liliana","Juan"]
+var numerosReversa= nombres.reverse()
+console.log(numerosReversa)
+
 
 //For each

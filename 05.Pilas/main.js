@@ -76,3 +76,55 @@ for(let i=0;i<primerArray.length;i++){
     pilaNombres.apilar(primerArray[i])
 }
 console.log(miFuncion(pilaNombres,10))
+
+// 2.- Escribe una función “reemplazar” que tenga como parámetros una pila de elementos, y dos valores también de tipo Number “nuevo” y “viejo”, de forma que si el segundo valor aparece en algún lugar de la pila, sea reemplazado por el primero (Solo la primera vez), y hará pop de los elementos más nuevos.
+// Entrada: reemplazar([3,2,3,4,6,8,1,2,5,5], 7, 2)
+// Salida: [3,2,3,4,6,8,1,7]
+// 3.- Un conductor maneja de un pueblo origen a un pueblo destino, pasando por varios
+// pueblos. Una vez en el pueblo destino, el conductor debe regresar a casa por el mismo
+// camino. Muestre el camino recorrido tanto de ida como de vuelta.
+// Recorrido: Pueblo Origen → pueblo 1 → pueblo 2 → destino
+// Regreso: destino → pueblo 2’ → pueblo 1 → Pueblo Origen
+
+const remplazar = (pila,numero1,numero2)=>{
+    for(let i=0; i<pila.longitud();i++){
+        if(pila.peek()===numero2){
+            pila.borrar();
+            pila.apilar(numero1)
+            return pila
+        }
+        else{
+            pila.borrar()
+        }
+    }
+
+}
+
+var segundoArray = [43,12,4,8,10,3,1,65,30,6,47]
+
+const pilaNumeros = new Pila();
+
+for(let i=0;i<segundoArray.length;i++){
+    pilaNumeros.apilar(segundoArray[i])
+}
+console.log(remplazar(pilaNumeros,5000,1))
+//resultado esperado [[43,12,4,8,10,3,5000])
+
+
+const pueblosFuncion = (pilaP)=>{
+    const pueblosInvertidos = new Pila();
+    const longitudFor = pilaP.longitud()
+    for(let i=0;i<longitudFor;i++){
+        let puebloBorrado = pilaP.borrar()
+        pueblosInvertidos.apilar(puebloBorrado)
+    }
+    return pueblosInvertidos
+}
+var tercerArray = ["CDMX","Puebla","Veracruz","Tabasco","Chiapas"]
+const pilaPueblos = new Pila();
+for(let i=0;i<tercerArray.length;i++){
+    pilaPueblos.apilar(tercerArray[i])
+}
+console.log(pilaPueblos)
+console.log("Despues de invertir")
+console.log(pueblosFuncion(pilaPueblos))

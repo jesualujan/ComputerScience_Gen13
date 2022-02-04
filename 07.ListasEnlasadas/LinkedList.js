@@ -58,6 +58,64 @@ class Node {
           }
           this.length++
       }
-
-
+      delete(data){
+          //verificar que dato va a ser borrado
+          let currentNode = this.head
+          let previousNode = null //almacenar el nodo con que tengo que reconectar
+          if(currentNode.data===data){
+              //vamos a reasignar la cabeza a mi nodo
+              this.head=currentNode.next //reasigno la cabeza de mi nodo
+          }else{
+              //ESTAMOS HACIENDO OTRO RECORRIDO, PUESTO QUE ESTAMOS BORRANDO NODOS
+              while(currentNode.data !== data && currentNode.next!==null){
+                  previousNode = currentNode  // el currentNode se convierte en el previousNode 
+                  currentNode = currentNode.next //pasar al siguiente nodo
+              }
+              previousNode.next=currentNode.next
+          }
+          this.length--
+          return "la data: " + data + " ha sido eliminada"
+      }
+       get(index){  
+                  //    0        ó        index es mayor
+            if(this.head===null || index > this.length){
+                return null
+            }else {
+                // 1 -> 2 -> 3
+                let counter = 1
+                let currentNode = this.head
+                while(counter !== index){
+                        counter++
+                        currentNode=currentNode.next
+                }
+                return currentNode
+            }
+       }
+      print(){
+          //nodo actual
+          let currentNode = this.head // tomar la cabecera
+          while(currentNode){
+              console.log(currentNode.data)
+              currentNode=currentNode.next
+          }
+      }
    }
+
+   //? AGREGAR DATA A NUESTROS NODOS 
+   const listaNumeros = new LinkedList ()
+   console.log(listaNumeros.isEmpty()) // TRUE
+
+   listaNumeros.addStart(100)
+   listaNumeros.addStart(200)
+   listaNumeros.addStart(300)
+   listaNumeros.addStart(400)
+   listaNumeros.addEnd(500)
+   console.log("NODO: ", listaNumeros)
+   listaNumeros.print()
+
+//ELIMINAR DATA A NUESTROS NODOS
+console.log("ELIMINADO: ", listaNumeros.delete(100))
+console.log("NODO ACTUAL: ", listaNumeros)
+
+//BUSCAR UN NODO POR SU INDICE 
+console.log("TRAER EL INDICE 2: ", listaNumeros.get(2))

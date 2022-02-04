@@ -48,8 +48,15 @@ class Node {
           }else{
                 // en este else nosotros ya sabes que existe this.head
                 let currentNode = this.head
+                //while: mientas (se cumpla la condición) {haz esto}
+                while(currentNode.next){
+                    //verificar si next tiene un nodo
+                    currentNode = currentNode.next //sustituyo el nodo que vive en next a mi nodo actual
+                }
+                //cuando next sea nulo, entonces se sale del while y continua con el resto del código
+                currentNode.next=node
           }
-
+          this.length++
       }
 
 

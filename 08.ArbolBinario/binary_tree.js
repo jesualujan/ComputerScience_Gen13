@@ -57,6 +57,25 @@
         }
 
         contains(data){
-
+          // partimos de la raiz 
+          let currentNode = this.root
+          // mientras currentNode exista 
+          while(currentNode !== null){
+              // exista data adentro del nodo
+               if(data === currentNode.data){
+                   return true
+               }else{
+                   // si mi data es menor currentNode.data
+                   if (data < currentNode.data){
+                    // asiganar a la izquierda 
+                    currentNode = currentNode.left
+                   }else{
+                       // si mi data no es menor, es mayor
+                       // asignamos a la derecha
+                       currentNode = currentNode.right
+                   }
+               }
+          }
+          return false 
         }
      }

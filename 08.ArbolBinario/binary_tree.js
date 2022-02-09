@@ -26,7 +26,34 @@
             this.root = new Node (data,null,null) 
             return
             }
+            // si no está vacia
+            // vamos a crear un nuevo nodo, -> currentNode 
+            let currentNode = this.root
 
+            // agregar un ciclo mientras cada nodo sea un subarbol 
+            while(true){
+                // si la data de mi nuevo nodo es menor que la data en mi nodo actual 
+                if(data < currentNode.data){
+                    //revisar si el nodo izquierdo está vacío
+                    if(currentNode.left !== null){
+                        // mi nodo actual le asigno a la izquierda el nuevo nodo
+                        currentNode = currentNode.left
+                    }else{
+                        currentNode.left = new Node(data, null, null)
+                        return currentNode.left
+                    }
+                }else {
+                    // si el nodo de la derecha está vacio
+                    if(currentNode.right !== null){
+                        //agregamos nuevo nodo
+                        currentNode=currentNode.right
+                    }else{
+                        //cambiar nuestro nodo actual por el hijo a la derecha 
+                        currentNode.right = new Node (data, null, null)
+                        return
+                    }
+                }
+            }
         }
 
         contains(data){

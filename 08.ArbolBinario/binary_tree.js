@@ -79,3 +79,17 @@
           return false 
         }
      }
+
+     //agregar información // instancias 
+     const nodo = new Tree()
+     nodo.add(12)
+     nodo.add(53)
+     nodo.add(23)
+     nodo.add(13)
+     nodo.add(19)
+     nodo.add(56)
+     nodo.add(55)
+     nodo.add(57)
+     nodo.add(11)
+     console.log(nodo.contains(20))//false, no existe el nodo con la data 20
+     console.log(nodo)

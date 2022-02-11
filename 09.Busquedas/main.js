@@ -143,3 +143,100 @@ const resultadoBinario = busquedaBinaria(arraynumeros,140)
 
 if (resultadoBinario >= 0) console.log(`Si existe tu numero y esta en la posicion ${resultadoBinario}`)
 if (resultadoBinario === -1) console.log("NO EXISTE ")
+
+
+//Crear una función que encuentre las letras en un arreglo de números y regrese un nuevo arreglo de letras
+// Ejemplo input -> [8,‘e’,7,2,‘a’,‘d’,‘f’,2,3,1,4,3]
+// Salida → [‘e’,‘a’,‘d’,‘f’] 
+
+var letras = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","ñ","o","p","q","r","s","t"]
+
+const funcionLetras = (arrayInput,arrayLetras)=>{
+    var resultado = []
+    for(let i=0; i<arrayInput.length;i++){
+        for(let j=0;j<arrayLetras.length;j++){
+            if(arrayLetras[i]===arrayInput[j])
+            resultado.push(arrayInput[j])
+        }
+    }
+    return resultado
+}
+
+const funcionLetrasBruno = (arrayInput)=>{
+    var resultado = []
+    for(let i=0; i<arrayInput.length;i++){
+       
+            if(parseInt(arrayInput[i])){
+
+            }
+            else{
+                resultado.push(arrayInput[i])
+            }
+        
+    }
+    return resultado
+}
+
+var arrayEjemplo = [8,"e",7,2,"a","d","f",2,3,1,4,3]
+var res = funcionLetras(arrayEjemplo,letras)
+var res2 = funcionLetrasBruno(arrayEjemplo)
+console.log(res)
+console.log(res2)
+//5.- Crear una clase llamada Contacto con los siguientes datos
+// - Nombre
+// - Apellidos
+// - Telefono
+//
+// Después crear una clase que sea ListaContactos la cual tendrá dos métodos
+// - Agregar un contacto
+// - Buscar un contacto por nombre 
+
+
+//Clase contacto con un constructos que recibe Nombre,apellido y telefono y los inicia como atributos de la clase
+class Contacto  {
+    constructor(nombre,apellido,telefono){
+        this.nombre = nombre,
+        this.apellido = apellido,
+        this.telefono = telefono
+    }
+
+}
+//Creo cuatro diferentes contactos de la clase que acabo de crear
+var Renecontacto = new Contacto("Rene","Manzano",5435423532)
+var Jaircontacto = new Contacto("Jair","Suarez",465465468)
+var Dulcecontacto = new Contacto("Dulce","Lopez",646848668468)
+var Robertocontacto = new Contacto("Roberto","Perez",684864846)
+
+//Crear la clase de listaContactos que tiene un constructor vacio
+class ListaContactos {
+    constructor(){
+        this.lista = [] //iniciando this.lista como un array vacio
+    }
+    //metodo agregar que recibe un contacto como parametro y lo que hace es agregar este a this.lista
+    agregar(contacto){
+        this.lista.push(contacto)
+    }
+    //metodo buscar que recibe un nombre, recorre la lista de contactos y compara el nombre del contacto con el nombre recibido
+    buscar(nombre){
+        var listaaux = this.lista
+        for (let i=0;i<listaaux.length;i++){
+            if(nombre=== listaaux[i].nombre){
+                return listaaux[i] // en caso de encontrarse el nombre , regresa el contacto completo
+            }
+        }
+        return "No se encontro el nombre en los contactos" // en caso de no encontrar , regresa el string
+
+
+    }
+}
+
+//Crear una lista de contactos
+var contactosDevf = new ListaContactos()
+//Agregar los contactos a la lista que acabo de crear
+contactosDevf.agregar(Renecontacto)
+contactosDevf.agregar(Dulcecontacto)
+contactosDevf.agregar(Jaircontacto)
+contactosDevf.agregar(Robertocontacto)
+
+//Ejecuto el metodo buscar
+console.log(contactosDevf.buscar("Dulce"))
